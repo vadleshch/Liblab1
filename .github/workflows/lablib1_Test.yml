@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Або 'windows-latest' / 'macos-latest', якщо треба інша ОС
 
     steps:
       - name: Checkout Repository
@@ -21,7 +21,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'  # Вкажи потрібну версію .NET
 
       - name: Restore Dependencies
         run: dotnet restore
@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Tests
         run: dotnet test --no-build --configuration Release --logger trx --results-directory TestResults
-        continue-on-error: true
+        continue-on-error: false  # Якщо тести падають – пайплайн також впаде
 
       - name: Upload Test Results
         if: always()
