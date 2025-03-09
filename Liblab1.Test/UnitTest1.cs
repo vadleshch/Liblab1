@@ -49,7 +49,7 @@ namespace Liblab1.Test
         public void Modtest()
         {
             var calc = new Calc();
-            var result = calc.Mod(0, 0);
+            var result = calc.Mod(0, 1);
             Assert.That(result, Is.EqualTo(0));
             result = calc.Mod(1, 1);
             Assert.That(result, Is.EqualTo(0));

@@ -15,6 +15,6 @@ namespace Liblab1
         public int Mult(int a, int b)
         { return a * b; }
         public int Mod(int a, int b)
-        { return a % b + 1; }
+        { return a % b; }
     }
 }
